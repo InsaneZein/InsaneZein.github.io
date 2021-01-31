@@ -1,0 +1,64 @@
+
+<h3>Hi {{ currentUser.name }}</h3>
+<h3>Number of Statistics: {{ surveyTotals }}</h3>
+
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            When you come to a fork in the road, and there are no options left, which way do you go?
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Left: 5</p>
+    <p>Counter-left: 7</p>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Why is the sky blue
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p *ngFor='let option of skyColorOptions'>
+        {{ option }} : 6
+    </p>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            Examine your surroundings. How many green things do you see?
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>Min: 3</p>
+    <p>Max: 10</p>
+    <p>Average: 7</p>
+</mat-expansion-panel>
+
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            What color are the eyes of the most interesting person you know?
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p *ngFor='let option of eyeColorOptions'>
+        {{ option }} : 4
+    </p>
+</mat-expansion-panel>
+
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            What did/would you name your first pet goat?
+        </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p>
+      Top 3 answers:  
+    </p>
+    <p>Goaty McGoatface</p>
+    <p>Billy</p>
+    <p>Sir Goat</p>
+</mat-expansion-panel>
+
+

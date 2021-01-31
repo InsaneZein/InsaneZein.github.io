@@ -1,0 +1,60 @@
+<form [formGroup]="surveyForm" class="example-form" (ngSubmit)="onSubmit()">
+
+  <h2>Survey</h2>
+
+  <mat-form-field appearance="fill">
+    <mat-label>
+      When you come to a fork in the road, and there are no options left,which way do you go?
+    </mat-label>
+    <mat-select disableRipple formControlName="fork" required>
+      <mat-option *ngFor="let path of pathOptions" [value]="path">
+        {{ path }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Why is the sky blue?</mat-label>
+      <mat-select disableRipple formControlName="skyColor" required>
+        <mat-option *ngFor="let skyColor of skyColorOptions" [value]="skyColor">
+          {{ skyColor }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>What color are the eyes of the most interesting person you know?</mat-label>
+      <mat-select formControlName="eyeColors" multiple required>
+        <mat-option *ngFor="let eyeColor of eyeColorOptions" [value]="eyeColor">
+          {{ eyeColor }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    
+    <mat-form-field appearance="fill">
+      <mat-label>Examine your surroundings. How many green things do you see?</mat-label>
+      <input 
+        matInput
+        formControlName="greenNumber"
+        type="number"
+        required>
+      <mat-hint>hint: 6</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>What did/would you name your first pet goat?</mat-label>
+      <input 
+        matInput
+        formControlName="goatName" 
+        required>
+        <mat-hint>hint: Goaty McGoatface</mat-hint>
+    </mat-form-field>
+    
+    <button mat-flat-button
+      color="primary" 
+      type="submit" 
+      [disabled]="!surveyForm.valid"> 
+      Submit
+    </button>
+          
+</form>

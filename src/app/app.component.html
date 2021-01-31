@@ -1,0 +1,11 @@
+<p *ngIf="currentUser">
+    <mat-toolbar>
+    <span>Overspecified Website Inc</span>
+    <span class="example-spacer"></span>
+    <button (click)="logout()" mat-icon-button class="example-icon">
+     <mat-icon>logout</mat-icon>
+   </button>
+  </mat-toolbar>
+</p>
+
+<router-outlet></router-outlet>
