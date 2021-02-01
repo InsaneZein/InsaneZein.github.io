@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { SurveyStatisticsComponent } from './survey-statistics/survey-statistics.component';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
     HttpClientModule,
     MatToolbarModule,
     MatIconModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatSnackBarModule
   ],
   declarations: [
     AppComponent,

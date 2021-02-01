@@ -52,15 +52,12 @@ export class SurveyStatisticsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTotalSurveys();
-    this.questionStatistics('Why is the sky blue?', 'It is blue because it is blue');
-    console.log(this.answerNumbers);
-    
+    this.questionStatistics('Why is the sky blue?', 'It is blue because it is blue');    
   }
 
   getTotalSurveys() {
     this.surveyDataService.getAll()
       .subscribe(surveys => this.surveyTotals = surveys.length);
-    console.log(this.surveyTotals);
   }
 
   getAnswers() {

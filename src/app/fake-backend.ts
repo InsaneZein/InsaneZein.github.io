@@ -25,8 +25,6 @@ localStorage.setItem('users', JSON.stringify([surveyUser, adminUser]))
 let users = JSON.parse(localStorage.getItem('users')) || [surveyUser, adminUser];
 let surveys = JSON.parse(localStorage.getItem('surveys')) || [];
 
-console.log(localStorage.getItem('users'));
-
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -100,7 +98,6 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             }
 
             function getSurveys() {
-                console.log(surveys);
                 return ok(surveys);
             }
 

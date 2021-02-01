@@ -3,6 +3,7 @@ import {FormControl, FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { SurveyDataService } from '../services/survey-data.service';
 import { Survey } from '../models/survey';
 import { first } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-survey',
@@ -14,7 +15,8 @@ export class SurveyComponent implements OnInit {
   surveyForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private surveyDataService: SurveyDataService) { }
+    private surveyDataService: SurveyDataService,
+    private snackbar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.createForm();
@@ -73,18 +75,17 @@ export class SurveyComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.surveyForm.value);
     var surveyData = this.buildSurveyData();
-    console.log(surveyData);
     this.surveyDataService.submitResponse(surveyData)
     .pipe(first())
         .subscribe(
           data => {
-            console.log(localStorage.getItem('surveys'))
             console.log('form submitted successfully');
+            this.snackbar.open('Form submitted successfully');
           },
           error => {
             console.error('form submission error')
+            this.snackbar.open('Error encountered in form submission');
           });
   }
 
